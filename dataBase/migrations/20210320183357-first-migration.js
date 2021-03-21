@@ -12,7 +12,6 @@ module.exports = {
           id: {
             type: Sequelize.DataTypes.INTEGER,
             autoIncrement: true,
-            allowNull: false,
             primaryKey: true
           },
           producer: {
@@ -32,7 +31,7 @@ module.exports = {
             allowNull: false
           },
           price: {
-            type: Sequelize.DataTypes.NUMBER,
+            type: Sequelize.DataTypes.DECIMAL,
             allowNull: false
           }
         }
