@@ -81,7 +81,6 @@ module.exports = {
 
       await mailService.sendMail(email, emailActionsEnum.DELETE_ACCOUNT, { name });
 
-      // throw new ErrorHandler('qertrew', 418)
       await transaction.commit();
 
       res.json(statusMessages.USER_WAS_DELETED[prefLang]);
