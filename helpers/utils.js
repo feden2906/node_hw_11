@@ -52,12 +52,12 @@ const _basicQueryBuilder = (query) => {
   };
 };
 
-const _saveTokensToBD = async (userID) => {
+const _saveTokensToBD = async (userID, transaction) => {
   const tokens = tokenizer();
 
-  await authService.deleteTokens(userID);
+  await authService.deleteTokens(userID, { transaction });
 
-  await authService.saveTokenToBD({ ...tokens, userID });
+  await authService.saveTokenToBD({ ...tokens, userID }, transaction);
 
   return tokens;
 };
