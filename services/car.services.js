@@ -27,9 +27,9 @@ module.exports = {
     return Car.update(carObject, { where: { id }, transaction })
   },
 
-  deleteCar: (carID, transaction) => {
+  deleteCar: (id, transaction) => {
     const Car = db.getModel(CAR);
 
-    return Car.destroy(carID, { transaction })
+    return Car.destroy({ where: { id }, transaction })
   }
 };

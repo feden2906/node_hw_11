@@ -27,15 +27,15 @@ module.exports = {
     return User.create(userObject, { transaction });
   },
 
-  updateUser: async (userID, userObject, transaction) => {
+  updateUser: (id, userObject, transaction) => {
     const User = db.getModel(USER);
 
-    await User.update(userObject, { where: { id: userID }, transaction });
+    return User.update(userObject, { where: { id }, transaction });
   },
 
-  deleteUser: async (userID, transaction) => {
+  deleteUser: (id, transaction) => {
     const User = db.getModel(USER);
 
-    await User.destroy({ where: { id: userID }, transaction });
+    return User.destroy({ where: { id }, transaction });
   }
 };
