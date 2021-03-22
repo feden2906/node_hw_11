@@ -55,7 +55,7 @@ const _basicQueryBuilder = (query) => {
 const _saveTokensToBD = async (userID, transaction) => {
   const tokens = tokenizer();
 
-  await authService.deleteTokens(userID, { transaction });
+  await authService.deleteTokens(userID, transaction);
 
   await authService.saveTokenToBD({ ...tokens, userID }, transaction);
 
