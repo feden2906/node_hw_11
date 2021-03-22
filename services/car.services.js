@@ -1,16 +1,35 @@
-// const db = require('../dataBase').getInstance();
+const db = require('../dataBase').getInstance();
 
-// const { CAR } = require('../constants/modelNames.enum');
+const { CAR } = require('../constants/modelNames.enum');
 
-// module.exports = {
-  // findCars: (query) => {
-  //   const Car = db.getModel(CAR);
-  //
-  //   return Car.findAll({ where: query });
-  // }
+module.exports = {
+  findCars: (query) => {
+    const Car = db.getModel(CAR);
 
-// CarById: (userID) => Car.findById(userID),
-// createCar: (carObject) => Car.create(carObject),
-// updateCar: (carID, carObject) => Car.findByIdAndUpdate(carID, { $set: carObject }),
-// deleteCar: (carID) => Car.findByIdAndDelete(carID)
-// };
+    return Car.findAll({ where: query });
+  },
+
+  CarById: (userID) => {
+    const Car = db.getModel(CAR);
+
+    return Car.findOne({ where: userID })
+  },
+
+  createCar: (carObject, transaction) => {
+    const Car = db.getModel(CAR);
+
+    return Car.create(carObject, { transaction })
+  },
+
+  updateCar: (id, carObject, transaction) => {
+    const Car = db.getModel(CAR);
+
+    return Car.update(carObject, { where: { id }, transaction })
+  },
+
+  deleteCar: (carID, transaction) => {
+    const Car = db.getModel(CAR);
+
+    return Car.destroy(carID, { transaction })
+  }
+};
