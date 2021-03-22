@@ -45,8 +45,8 @@ module.exports = {
 
       res.status(statusCodes.CREATED).json(statusMessages.USER_IS_CREATED[prefLang]);
     } catch (e) {
-      next(e);
       await transaction.rollback();
+      next(e);
     }
   },
 
@@ -67,8 +67,8 @@ module.exports = {
 
       res.json(statusMessages.USER_WAS_UPDATE[prefLang]);
     } catch (e) {
-      next(e);
       await transaction.rollback();
+      next(e);
     }
   },
 
@@ -85,8 +85,8 @@ module.exports = {
 
       res.json(statusMessages.USER_WAS_DELETED[prefLang]);
     } catch (e) {
-      next(e);
       await transaction.rollback();
+      next(e);
     }
   }
 };

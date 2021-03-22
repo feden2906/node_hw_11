@@ -21,21 +21,21 @@ module.exports = {
     return User.findOne({ where: findObj });
   },
 
-  createUser: (userObject) => {
+  createUser: (userObject, transaction) => {
     const User = db.getModel(USER);
 
-    return User.create(userObject);
+    return User.create(userObject, { transaction });
   },
 
-  updateUser: async (userID, userObject) => {
+  updateUser: async (userID, userObject, transaction) => {
     const User = db.getModel(USER);
 
-    await User.update(userObject, { where: { id: userID } });
+    await User.update(userObject, { where: { id: userID }, transaction });
   },
 
-  deleteUser: async (userID) => {
+  deleteUser: async (userID, transaction) => {
     const User = db.getModel(USER);
 
-    await User.destroy({ where: { id: userID } });
+    await User.destroy({ where: { id: userID }, transaction });
   }
 };
