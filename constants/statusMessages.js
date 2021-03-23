@@ -29,6 +29,11 @@ module.exports = {
     ua: 'Автомобіль створено'
   },
 
+  CAR_WAS_UPDATED: {
+    en: 'Car was updated',
+    ua: 'Дані автомобіля оновлено'
+  },
+
   USER_IS_EXISTS: {
     en: 'User with this email exists',
     ua: 'Користувача з цією поштою вже зареэстровано'

@@ -25,7 +25,7 @@ app.use('*', (err, req, res, next) => {
       .status(err.status)
       .json({ text: err.message });
 });
-console.log(process.env.ROOT_EMAIL_PASSWORD)
+
 app.listen(PORT, () => {
   console.log(`server started to ${PORT}`);
 });

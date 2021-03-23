@@ -2,10 +2,10 @@ module.exports = {
   MONGO_URL: process.env.MONGO_URL || 'mongodb://localhost:27017/users_cars',
   JWT_SECRET: process.env.JWT_SECRET || 'MY_SECRET',
   JWT_REFRESH_SECRET: process.env.JWT_REFRESH_SECRET || 'MY_REFRESH_SECRET',
-  PORT: process.env.PORT || 5050,
+  PORT: process.env.PORT || 6004,
 
-  ROOT_EMAIL: process.env.ROOT_EMAIL || 'test@gmail.com',
-  ROOT_EMAIL_PASSWORD: process.env.ROOT_EMAIL_PASSWORD || '12345',
+  ROOT_EMAIL: process.env.ROOT_EMAIL || 'qqq@gmail.com',
+  ROOT_EMAIL_PASSWORD: process.env.ROOT_EMAIL_PASSWORD || 'qqq',
 
   DB_LOGIN: process.env.DB_LOGIN || 'root',
   DB_PASSWORD: process.env.DB_PASSWORD || 'root',
