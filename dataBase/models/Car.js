@@ -26,7 +26,7 @@ module.exports = (client) => {
         allowNull: false
       },
       price: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
         allowNull: false
       }
     },
