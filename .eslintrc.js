@@ -1,27 +1,20 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true,
-    node: true,
+    commonjs: true,
+    es2021: true
   },
-  globals: {},
   parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module',
+    ecmaVersion: 12,
   },
-  extends: [
-    'airbnb-base',
-    'eslint:recommended',
-  ],
-  plugins: [],
   rules: {
     'array-bracket-newline': [
       'error',
-      { minItems: 2 },
+      {minItems: 2}
     ],
     'array-element-newline': [
       'error',
-      { minItems: 2 },
+      {minItems: 2}
     ],
     'arrow-body-style': 'error',
     'block-scoped-var': 'error',
@@ -39,16 +32,18 @@ module.exports = {
     indent: [
       'warn',
       2,
-      {
-        MemberExpression: 2,
-        SwitchCase: 1,
-        VariableDeclarator: 2,
-      },
+      {SwitchCase: 1}
     ],
+    'linebreak-style': 'off',
     'max-classes-per-file': 'off',
     'newline-per-chained-call': 'error',
     'new-parens': 'error',
     'no-alert': 'error',
+    semi: [
+      'error',
+      'always',
+      { omitLastInOneLineBlock: true }
+    ],
     'no-duplicate-imports': 'error',
     'no-nested-ternary': 'error',
     'no-mixed-spaces-and-tabs': 'error',
@@ -62,7 +57,7 @@ module.exports = {
     'no-plusplus': 'off',
     'no-empty-functions': 'off',
     'consistent-return': 'off',
-    // 'no-dynamic-require': 'true',
+    'no-dynamic-require': 'off',
     'no-eval': 'error',
     'no-extend-native': 'error',
     'no-extra-bind': 'error',
@@ -81,12 +76,12 @@ module.exports = {
         ignoreRegExpLiterals: true,
         ignoreUrls: true,
         comments: 130,
-        code: 130,
-      },
+        code: 130
+      }
     ],
     'no-magic-numbers': [
       'off',
-      { ignoreArrayIndexes: true },
+      {ignoreArrayIndexes: true}
     ],
     'no-multi-spaces': 'error',
     'no-multi-str': 'error',
@@ -110,13 +105,12 @@ module.exports = {
     'no-unused-expressions': 'error',
     'no-unused-vars': [
       'error',
-      { varsIgnorePattern: 'ctx' },
+      {varsIgnorePattern: 'ctx'}
     ],
     'no-use-before-define': [
       'error',
-      { functions: false }
+      {functions: false}
     ],
-    'prefer-object-spread': 'warn',
     'no-useless-call': 'error',
     'no-useless-concat': 'error',
     'no-useless-return': 'error',
@@ -125,40 +119,35 @@ module.exports = {
     'object-shorthand': 'error',
     'one-var': [
       'error',
-      'never',
+      'never'
     ],
     'padding-line-between-statements': 'error',
     'prefer-const': 'error',
+    'prefer-object-spread': 'warn',
     'quote-props': [
       'error',
-      'as-needed',
+      'as-needed'
     ],
     radix: 'error',
     'require-await': 'error',
     'sort-imports': [
       'error',
       {
-        ignoreCase: false,
-        ignoreDeclarationSort: false,
-        ignoreMemberSort: false,
-      },
+        ignoreCase: true,
+        ignoreDeclarationSort: true,
+        ignoreMemberSort: false
+      }
     ],
     'space-before-function-paren': [
       'error',
       {
         anonymous: 'never',
         asyncArrow: 'always',
-        named: 'never',
-      },
+        named: 'never'
+      }
     ],
     'use-isnan': 'error',
     'wrap-iife': 'error',
-    yoda: 'error',
+    yoda: 'error'
   },
-  overrides: [{
-    files: ['**/*.spec.ts'],
-    env: {
-      jest: true,
-    },
-  }],
 };
