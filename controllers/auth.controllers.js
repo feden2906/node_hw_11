@@ -1,4 +1,4 @@
-const { utils, passwordHasher } = require('../helpers');
+const { utils, passwordHasher } = require('../helpers')
 const { statusCodes } = require('../constants')
 const { instanceTransaction } = require('../dataBase').getInstance()
 
